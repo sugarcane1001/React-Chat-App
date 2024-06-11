@@ -8,7 +8,8 @@ export default function App({ Component, pageProps }) {
   return (
   <ChakraProvider>
     {/*<Login />*/}
-    <Sidebar/>
+    {/*<Sidebar/>*/}
+    <Component {...pageProps} />
   </ChakraProvider>
   )
 }
