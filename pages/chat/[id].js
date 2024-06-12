@@ -3,13 +3,14 @@ import Sidebar from "../../components/Sidebar"
 import { Avatar, Button, Flex, FormControl, Heading, Input, Text} from "@chakra-ui/react"
 import { Router, useRouter } from "next/router"
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
-import { collection, orderBy } from "firebase/firestore";
+import { addDoc, collection, orderBy, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebaseconfig";
 import { query } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from "../../firebaseconfig";
 import { doc } from "firebase/firestore";
 import getOtherEmail from "../../utils/getOtherEmail";
+import { useState } from "react";
 
 const Topbar = ({email}) => {
     return (
@@ -27,12 +28,29 @@ const Topbar = ({email}) => {
     )
 }
 
-const Bottombar = () => {
+const Bottombar = ({id, user}) => {
+    const [input, setInput] = useState("");
+    //console.log(input);
+
+    const sendMessage = async (e) => {
+        e.preventDefault();
+
+        await addDoc(collection(db, `chats/${id}/messeges`), {
+            text: input,
+            sender: user.email,
+            timestamp: serverTimestamp()
+        })
+        
+        setInput("");
+    }
+
     return(
         <FormControl
             p={3}
+            onSubmit={sendMessage}
+            as="form"
         >
-            <Input placeholder="Type your message..." autoComplete="off"/>
+            <Input placeholder="Type your message..." autoComplete="off" onChange={(e) => setInput(e.target.value)} value={input}/>
             <Button type="submit" hidden>Submit</Button>
         </FormControl>
     )
@@ -88,7 +106,7 @@ export default function Chat(){
 
                 </Flex>
 
-                <Bottombar />
+                <Bottombar id={id} user={user}/>
 
             </Flex>
         </Flex>

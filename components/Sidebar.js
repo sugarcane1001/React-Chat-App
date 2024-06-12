@@ -65,7 +65,7 @@ export default function Sidebar() {
             >
                 <Flex align="center">
                     <Avatar src={user.photoURL} marginEnd={3}/>
-                    <Text>{user.displayName}</Text>   
+                    <Text>{user.displayName}</Text>
                 </Flex>
 
                 <IconButton size="sm" rounded="xl" icon={<ArrowLeftIcon/>} onClick={() => signOut(auth)}/>

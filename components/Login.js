@@ -33,7 +33,7 @@ export default function Login (){
                         <ChatIcon w="100px" h="100px" color="white"/>
                     </Box>
                     
-                    <Button boxShadow="md" onClick={() => signInWithGoogle("", {prompt: "select_account"})}>Google Sign In</Button>
+                    <Button boxShadow="md" onClick={() => signInWithGoogle("", {prompt: "select_account"})}>Sign In with Google</Button>
                 </Stack>
                 
             </Center>
