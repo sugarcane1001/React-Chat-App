@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Sidebar from "../../components/Sidebar"
 import { Avatar, Button, Flex, FormControl, Heading, Input, Text} from "@chakra-ui/react"
 
@@ -32,6 +33,9 @@ export default function Chat(){
     return (
 
         <Flex h="100vh">
+            <Head>
+                <title>Chat App Inbox</title>
+            </Head>
             <Sidebar />
 
             <Flex 
