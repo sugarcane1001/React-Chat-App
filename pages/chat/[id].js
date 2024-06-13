@@ -88,7 +88,7 @@ export default function Chat(){
 
         <Flex h="100vh">
             <Head>
-                <title>Chat App Inbox</title>
+                <title>Inbox</title>
             </Head>
             <Sidebar />
 

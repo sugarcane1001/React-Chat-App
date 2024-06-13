@@ -21,7 +21,7 @@ export default function Login (){
                     p={16}
                     rounded = "3xl"
                     spacing={12}
-                    boxShadow="md"
+                    boxShadow="lg"
                 >
                     <Box
                         bgColor="blue.500"
