@@ -71,10 +71,6 @@ To get a local copy up and running, follow these steps.
 - Navigate through different chat rooms using the sidebar.
 - Send messages in real-time and view them instantly.
 
-## Demonstration
-
-[![Alt text](https://img.youtube.com/vi/73h8_zsRBQM/0.jpg)](https://www.youtube.com/watch?v=73h8_zsRBQM)
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
